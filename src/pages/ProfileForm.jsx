@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import API from "../api";
-import "./App.css"
+import "./ProfileForm.css"
 
 export default function ProfileForm() {
   const [form, setForm] = useState({
@@ -56,23 +56,66 @@ export default function ProfileForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>My Profile</h2>
-      <input name="name" placeholder="Name" value={form.name} onChange={handleChange} />
-      <input name="email" placeholder="Email" value={form.email} onChange={handleChange} />
-      <input name="skills" placeholder="Skills (comma separated)" value={form.skills} onChange={handleChange} />
-      <input name="github" placeholder="GitHub Link" value={form.github} onChange={handleChange} />
+    <form className="profile-form" onSubmit={handleSubmit}>
+      <h2 className="form-title">My Profile</h2>
 
-      <h3>Projects</h3>
+      <input
+        className="form-input"
+        name="name"
+        placeholder="Name"
+        value={form.name}
+        onChange={handleChange}
+      />
+      <input
+        className="form-input"
+        name="email"
+        placeholder="Email"
+        value={form.email}
+        onChange={handleChange}
+      />
+      <input
+        className="form-input"
+        name="skills"
+        placeholder="Skills (comma separated)"
+        value={form.skills}
+        onChange={handleChange}
+      />
+      <input
+        className="form-input"
+        name="github"
+        placeholder="GitHub Link"
+        value={form.github}
+        onChange={handleChange}
+      />
+
+      <h3 className="section-title">Projects</h3>
       {form.projects.map((proj, idx) => (
-        <div key={idx}>
-          <input name="title" placeholder="Title" value={proj.title} onChange={(e) => handleProjectChange(idx, e)} />
-          <input name="description" placeholder="Description" value={proj.description} onChange={(e) => handleProjectChange(idx, e)} />
-          <input name="link" placeholder="Project Link" value={proj.link} onChange={(e) => handleProjectChange(idx, e)} />
+        <div className="project-group" key={idx}>
+          <input
+            className="form-input"
+            name="title"
+            placeholder="Title"
+            value={proj.title}
+            onChange={(e) => handleProjectChange(idx, e)}
+          />
+          <input
+            className="form-input"
+            name="description"
+            placeholder="Description"
+            value={proj.description}
+            onChange={(e) => handleProjectChange(idx, e)}
+          />
+          <input
+            className="form-input"
+            name="link"
+            placeholder="Project Link"
+            value={proj.link}
+            onChange={(e) => handleProjectChange(idx, e)}
+          />
         </div>
       ))}
 
-      <button type="submit">Save Profile</button>
+      <button className="submit-btn" type="submit">Save Profile</button>
     </form>
   );
 }

@@ -1,0 +1,81 @@
+.navbar {
+  width: 100%;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  background-clip: text;            /* Standard syntax */
+  -webkit-background-clip: text;    /* Chrome, Safari ke liye */
+  color: transparent;               /* Firefox, Edge ke liye */
+  -webkit-text-fill-color: transparent; /* WebKit browsers ke liye */
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  transform: scale(1.1);
+}
+
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  box-shadow: 0 4px 15px rgba(255, 105, 135, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-logout {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  border: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 105, 135, 0.4);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
