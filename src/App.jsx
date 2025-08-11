@@ -4,7 +4,6 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProfileForm from "./pages/ProfileForm";
 import ProfilePreview from "./pages/ProfilePreview";
-
 import "./App.css";
 
 export default function App() {
@@ -12,7 +11,14 @@ export default function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<h1>Welcome to MERN App</h1>} />
+        <Route
+          path="/"
+          element={
+            <div className="center-container">
+              <h1 className="typing-text">MY PORTFOLIO APP</h1>
+            </div>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<ProfileForm />} />
